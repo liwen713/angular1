@@ -1,0 +1,13 @@
+<section class="projects">
+  <h2>Mis Proyectos</h2>
+  <div class="projects-grid">
+    <div class="project-card" *ngFor="let project of projects" (click)="project.github && goToGithub(project.github)">
+      <h3>{{ project.name }}</h3>
+      <p>{{ project.description }}</p>
+      <div class="tech-tags">
+        <span class="tag" *ngFor="let tech of project.technologies">{{ tech }}</span>
+      </div>
+      <a href="#" class="github-link">Ver en GitHub →</a>
+    </div>
+  </div>
+</section>
