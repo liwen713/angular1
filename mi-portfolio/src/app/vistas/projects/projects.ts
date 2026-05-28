@@ -28,7 +28,8 @@ export class ProjectsComponent {
       id: 3,
       name: 'Portfolio Personal',
       description: 'Mi portafolio personal usando Angular. Estoy realizando este proyecto en marco de la materia "Desarrollo. El objetivo es crear un sitio web que muestre mi trabajo y experiencia. Es un proyecto individual.',
-      technologies: ['Angular', 'Javascript', 'CSS']
+      technologies: ['Angular', 'Javascript', 'CSS'],
+      github: 'https://github.com/liwen713/angular1'
     }
   ];
 
