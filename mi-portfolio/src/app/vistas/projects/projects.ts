@@ -20,7 +20,7 @@ export class ProjectsComponent {
     {
       id: 2,
       name: 'Gestión de Productos',
-      description: 'Gestor de productos que utiliza LocalStorage, realizado durante el año 2024 en marco de la materia "Desarrollo", integrando funciones como agregar, listar y eliminar productos, además de buscarlos por categoría, actualizar el stock y calcular el valor total del inventario. Es un proyecto individual.',
+      description: 'Gestor de productos que utiliza LocalStorage. Realizado durante el año 2024 en marco de la materia "Desarrollo", integrando funciones como agregar, listar y eliminar productos, además de buscarlos por categoría, actualizar el stock y calcular el valor total del inventario. Es un proyecto individual.',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       github: 'https://github.com/liwen713/gestionProductosLocalStorage'
     },
