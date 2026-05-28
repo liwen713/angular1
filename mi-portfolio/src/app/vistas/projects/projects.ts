@@ -13,7 +13,7 @@ export class ProjectsComponent {
     {
       id: 1,
       name: 'Citas de Breaking Bad',
-      description: 'Una lista de las citas más famosas de la serie Breaking Bad.',
+      description: 'Una lista de las citas más famosas de la serie Breaking Bad. Este proyecto se realizó en marco a la materia "Desarrollo Web".',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       github: 'https://github.com/liwen713/citasBreakingBad'
     },
