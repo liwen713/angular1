@@ -1,0 +1,25 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Calculadora Web",
+      "description": "Una calculadora simple construida con HTML, CSS y JavaScript.",
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "github": "https://github.com/tu-usuario/calculadora"
+    },
+    {
+      "id": 2,
+      "name": "To-Do List",
+      "description": "Aplicación para gestionar tareas con almacenamiento local.",
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "github": "https://github.com/tu-usuario/todo-list"
+    },
+    {
+      "id": 3,
+      "name": "Portafolio Personal",
+      "description": "Mi portafolio personal usando Angular y CSS oscuro.",
+      "technologies": ["Angular", "TypeScript", "CSS"],
+      "github": "https://github.com/tu-usuario/portafolio"
+    }
+  ]
+}
