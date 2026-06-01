@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ProjectService, Project } from '../../services/project';
 
 @Component({
   selector: 'app-projects',
@@ -8,32 +9,32 @@ import { CommonModule } from '@angular/common';
   templateUrl: './projects.html',
   styleUrls: ['./projects.css']
 })
-export class ProjectsComponent {
-  projects = [
-    {
-      id: 1,
-      name: 'Citas de Breaking Bad',
-      description: 'Una lista de las citas más famosas de la serie Breaking Bad. Este proyecto se realizó en marco a la materia "Desarrollo" en el año 2024. Es un proyecto individual.',
-      technologies: ['HTML', 'CSS', 'JavaScript'],
-      github: 'https://github.com/liwen713/citasBreakingBad'
-    },
-    {
-      id: 2,
-      name: 'Gestión de Productos',
-      description: 'Gestor de productos que utiliza LocalStorage. Realizado durante el año 2024 en marco de la materia "Desarrollo", integrando funciones como agregar, listar y eliminar productos, además de buscarlos por categoría, actualizar el stock y calcular el valor total del inventario. Es un proyecto individual.',
-      technologies: ['HTML', 'CSS', 'JavaScript'],
-      github: 'https://github.com/liwen713/gestionProductosLocalStorage'
-    },
-    {
-      id: 3,
-      name: 'Portfolio Personal',
-      description: 'Mi portafolio personal usando Angular. Estoy realizando este proyecto en marco de la materia "Desarrollo. El objetivo es crear un sitio web que muestre mi trabajo y experiencia. Es un proyecto individual.',
-      technologies: ['Angular', 'Javascript', 'CSS'],
-      github: 'https://github.com/liwen713/angular1'
-    }
-  ];
+export class ProjectsComponent implements OnInit {
+  projects: Project[] = [];
+  isLoading: boolean = true;
+  errorMessage: string = '';
 
-  goToGithub(url: string) {
-  window.open(url, '_blank');
+  constructor(private projectService: ProjectService) { }
+
+  ngOnInit(): void {
+    this.loadProjects();
+  }
+
+  loadProjects(): void {
+    this.projectService.getProjects().subscribe({
+      next: (data: Project[]) => {
+        this.projects = data;
+        this.isLoading = false;
+      },
+      error: (error: any) => {
+        console.error('Error al cargar proyectos:', error);
+        this.errorMessage = 'Error al cargar los proyectos';
+        this.isLoading = false;
+      }
+    });
+  }
+
+  goToGithub(url: string): void {
+    window.open(url, '_blank');
   }
 }

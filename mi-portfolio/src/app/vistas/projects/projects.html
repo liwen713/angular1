@@ -1,7 +1,19 @@
 <section class="projects">
   <h2>Mis Proyectos</h2>
-  <div class="projects-grid">
-    <div class="project-card" *ngFor="let project of projects" (click)="project.github && goToGithub(project.github)">
+
+  <!-- Mensaje de carga -->
+  <div *ngIf="isLoading" class="loading">
+    <p>Cargando proyectos...</p>
+  </div>
+
+  <!-- Mensaje de error -->
+  <div *ngIf="errorMessage" class="error">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <!-- Grid de proyectos -->
+  <div class="projects-grid" *ngIf="!isLoading && !errorMessage">
+    <div class="project-card" *ngFor="let project of projects" (click)="goToGithub(project.github)">
       <h3>{{ project.name }}</h3>
       <p>{{ project.description }}</p>
       <div class="tech-tags">
@@ -9,5 +21,10 @@
       </div>
       <a href="#" class="github-link">Ver en GitHub →</a>
     </div>
+  </div>
+
+  <!-- Sin proyectos -->
+  <div *ngIf="!isLoading && projects.length === 0" class="no-projects">
+    <p>No hay proyectos disponibles</p>
   </div>
 </section>
