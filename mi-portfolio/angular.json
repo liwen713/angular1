@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "actividad-angular": {
+    "mi-portfolio": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -21,11 +21,13 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "public",
+                "output": ""
               },
               {
                 "glob": "**/*",
-                "input": "src/assets"
+                "input": "src/assets",
+                "output": "assets"
               }
             ]
           },
@@ -57,10 +59,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "actividad-angular:build:production"
+              "buildTarget": "mi-portfolio:build:production"
             },
             "development": {
-              "buildTarget": "actividad-angular:build:development"
+              "buildTarget": "mi-portfolio:build:development"
             }
           },
           "defaultConfiguration": "development"

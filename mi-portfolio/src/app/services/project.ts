@@ -15,7 +15,7 @@ export interface Project {
   providedIn: 'root'
 })
 export class ProjectService {
-  private jsonUrl = 'assets/data/projects.json';
+  private jsonUrl = '/assets/data/projects.json';
 
   constructor(private http: HttpClient) { }
 

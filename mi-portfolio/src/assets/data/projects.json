@@ -2,24 +2,24 @@
   "projects": [
     {
       "id": 1,
-      "name": "Calculadora Web",
-      "description": "Una calculadora simple construida con HTML, CSS y JavaScript.",
+      "name": "Citas de Breaking Bad",
+      "description": "Una lista de las citas más famosas de la serie Breaking Bad. Este proyecto se realizó en marco a la materia \"Desarrollo\" en el año 2024. Es un proyecto individual.",
       "technologies": ["HTML", "CSS", "JavaScript"],
-      "github": "https://github.com/tu-usuario/calculadora"
+      "github": "https://github.com/liwen713/citasBreakingBad"
     },
     {
       "id": 2,
-      "name": "To-Do List",
-      "description": "Aplicación para gestionar tareas con almacenamiento local.",
+      "name": "Gestión de Productos",
+      "description": "Gestor de productos que utiliza LocalStorage. Realizado durante el año 2024 en marco de la materia \"Desarrollo\", integrando funciones como agregar, listar y eliminar productos, además de buscarlos por categoría, actualizar el stock y calcular el valor total del inventario. Es un proyecto individual.",
       "technologies": ["HTML", "CSS", "JavaScript"],
-      "github": "https://github.com/tu-usuario/todo-list"
+      "github": "https://github.com/liwen713/gestionProductosLocalStorage"
     },
     {
       "id": 3,
       "name": "Portafolio Personal",
-      "description": "Mi portafolio personal usando Angular y CSS oscuro.",
+      "description": "Mi portafolio personal usando Angular. Estoy realizando este proyecto en marco de la materia \"Desarrollo. El objetivo es crear un sitio web que muestre mi trabajo y experiencia. Es un proyecto individual.",
       "technologies": ["Angular", "TypeScript", "CSS"],
-      "github": "https://github.com/tu-usuario/portafolio"
+      "github": "https://github.com/liwen713/angular1"
     }
   ]
 }
