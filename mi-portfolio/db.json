@@ -1,0 +1,25 @@
+{
+    "proyectos": [
+        {
+            "id": 1,
+            "nombre": "Citas de Breaking Bad",
+            "descripcion": "Una lista de citas icónicas de la serie Breaking Bad.",
+            "tecnologias": ["HTML", "JavaScript", "CSS"],
+            "url": ""
+        },
+        {
+            "id": 2,
+            "nombre": "Gestión de Productos",
+            "descripcion": "Una aplicación para gestionar productos.",
+            "tecnologias": ["HTML", "JavaScript", "CSS"],
+            "url": ""
+        },
+        {
+            "id": 3,
+            "nombre": "Portfolio Personal",
+            "descripcion": "Un portfolio personal para mostrar proyectos y habilidades.",
+            "tecnologias": ["HTML", "JavaScript", "CSS"],
+            "url": ""
+        }
+    ]
+}

@@ -1,12 +1,6 @@
 <section class="projects">
   <h2>Mis Proyectos</h2>
 
-  @if (isLoading) {
-    <div class="loading">
-      <p>Cargando proyectos...</p>
-    </div>
-  }
-
   @if (errorMessage) {
     <div class="error">
       <p>{{ errorMessage }}</p>
@@ -35,4 +29,11 @@
       <p>No hay proyectos disponibles</p>
     </div>
   }
+
+    @if (isLoading) {
+    <div class="loading">
+      <p>Cargando proyectos...</p>
+    </div>
+  }
+  
 </section>

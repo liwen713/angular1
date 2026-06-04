@@ -9,32 +9,18 @@ import { ProjectService, Project } from '../../services/project';
   templateUrl: './projects.html',
   styleUrls: ['./projects.css']
 })
-export class ProjectsComponent implements OnInit {
+
+export class ProjectsComponent {
   projects: Project[] = [];
   isLoading: boolean = true;
   errorMessage: string = '';
 
-  constructor(private projectService: ProjectService) { }
-
-  ngOnInit(): void {
-    this.loadProjects();
-  }
-
-  loadProjects(): void {
+  constructor(private projectService: ProjectService) 
+  { 
     this.projectService.getProjects().subscribe({
-      next: (data: Project[]) => {
-        this.projects = data;
-        this.isLoading = false;
-      },
-      error: (error: any) => {
-        console.error('Error al cargar proyectos:', error);
-        this.errorMessage = 'Error al cargar los proyectos';
-        this.isLoading = false;
-      }
-    });
+    next: (data) => console.log(data),
+    error: (error) => console.error(error),
+    complete: () => console.info('complete') 
+    })
+    }
   }
-
-  goToGithub(url: string): void {
-    window.open(url, '_blank');
-  }
-}
