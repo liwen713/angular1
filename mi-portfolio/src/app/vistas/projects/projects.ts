@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProjectService, Project } from '../../services/project';
+import { Projects } from '../../services/proyectos-service';
 
 @Component({
   selector: 'app-projects',
@@ -11,14 +11,14 @@ import { ProjectService, Project } from '../../services/project';
 })
 
 export class ProjectsComponent {
-  projects: Project[] = [];
-  isLoading: boolean = true;
+  projects: Projects[] = [];
+  isLoading: boolean = false;
   errorMessage: string = '';
   goToGithub: any;
 
   projectsList: any;
 
-  constructor(private projectService: ProjectService) 
+  constructor(private projectService: Projects) 
   { 
     this.projectService.getProjects().subscribe({
     next: (data) => {

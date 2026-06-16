@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 
 export class Projects {
 
-  private urlApi:string = "http://localhost:3000/proyectos";
+  private urlApi:string = "http://localhost:3000/projects";
 
   constructor(private http:HttpClient) {}
 
