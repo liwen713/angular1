@@ -11,22 +11,45 @@ import { Projects } from '../../services/proyectos-service';
 })
 
 export class ProjectsComponent {
-  projects: Projects[] = [];
-  isLoading: boolean = false;
+  projectsList: ProjectsContent[] = [];
+  isLoading: boolean = true;
   errorMessage: string = '';
-  goToGithub: any;
-
-  projectsList: any;
 
   constructor(private projectService: Projects) 
   { 
     this.projectService.getProjects().subscribe({
     next: (data) => {
       this.projectsList = data;
-      console.log(data);
+      this.isLoading = false;
     },
-    error: (error) => console.error(error),
-    complete: () => console.info('complete') 
-    })
+    error: (error) => {
+      console.error(error);
+      this.errorMessage = 'Error loading projects';
+      this.isLoading = false;
+    },
+    complete: () => {
+      this.isLoading = false;
+      console.info('complete');
     }
+    })
+  
+    }
+
+    goToGithub(url: string): void {
+      window.open(url, '_blank');
+    }
+
   }
+
+  export interface Technology {
+  id: string;  // string, no number — en tu JSON es "1", "2", etc.
+  name: string;
+}
+
+export interface ProjectsContent {
+  id: string;  // string, no number
+  name: string;
+  description: string;
+  technologies: Technology[];
+  github: string;
+}
