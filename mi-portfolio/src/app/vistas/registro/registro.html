@@ -32,6 +32,18 @@
       <div class="form-group">
         <label for="message">Confirmar Contraseña:</label>
         <input type="password" formControlName="contrasenia2" id="contrasenia2" name="contrasenia2" required>
+        @if (Contrasenia2?.invalid && (Contrasenia2?.touched || Contrasenia2?.dirty)) 
+        {
+          @if (Contrasenia2?.hasError('required')) 
+          {
+            <div class="text-danger">La confirmación de la contraseña es requerida</div>
+          }
+          @if (Contrasenia2?.dirty && Contrasenia2.touched){
+            @if (Contrasenia2 != Contrasenia1) {
+              <div class="text-danger">Las contraseñas no coinciden</div>
+            }
+        }
+        }
       </div>
 
         <input type="submit" value="Enviar">
