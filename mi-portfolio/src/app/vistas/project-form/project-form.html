@@ -1,0 +1,101 @@
+<section class="project-form-container">
+
+  <h1>Agregar nuevo proyecto</h1>
+
+  <form
+    [formGroup]="projectForm"
+    (ngSubmit)="onSubmit()"
+  >
+
+    <div class="form-group">
+
+      <label for="name"> Nombre del proyecto </label>
+      <input id="name" type="text" formControlName="name" >
+
+      @if (name.invalid && name.touched) {
+        <div class="error-message">
+          @if (name.errors?.['required']) {
+            <p>El nombre del proyecto es obligatorio.</p>
+          }
+
+          @if (name.errors?.['minlength']) {
+            <p>El nombre debe tener al menos 3 caracteres.</p>
+          }
+
+          @if (name.errors?.['maxlength']) {
+            <p>El nombre no puede superar los 100 caracteres.</p>
+          }
+        </div>
+
+      }
+
+    </div>
+
+    <div class="form-group">
+      <label for="description">Descripción</label>
+      <textarea id="description" rows="5" formControlName="description"></textarea>
+
+      @if (description.invalid && description.touched) {
+        <div class="error-message">
+          @if (description.errors?.['required']) {
+            <p>La descripción es obligatoria.</p>
+          }
+          @if (description.errors?.['minlength']) {
+            <p>La descripción debe tener al menos 10 caracteres.</p>
+          }
+
+        </div>
+
+      }
+
+    </div>
+
+    <div class="form-group">
+
+      <label for="technologies">Tecnologías</label>
+
+      <input id="technologies" type="text" placeholder="Angular, TypeScript, CSS" formControlName="technologies">
+
+      @if (technologies.invalid && technologies.touched) {
+
+        <div class="error-message">
+          @if (technologies.errors?.['required']) {
+            <p>Debes indicar al menos una tecnología.</p>
+          }
+
+        </div>
+
+      }
+
+    </div>
+
+    <div class="form-group">
+
+      <label for="github">URL del repositorio GitHub</label>
+
+      <input id="github" type="url" placeholder="https://github.com/usuario/proyecto" formControlName="github">
+
+      @if (github.invalid && github.touched) {
+        <div class="error-message">
+          @if (github.errors?.['required']) {
+            <p>La URL de GitHub es obligatoria.</p>
+          }
+
+          @if (github.errors?.['pattern']) {
+            <p>Debes ingresar una URL válida.</p>
+          }
+
+        </div>
+
+      }
+
+    </div>
+
+
+    <button type="submit" [disabled]="projectForm.invalid">
+      Guardar proyecto
+    </button>
+
+  </form>
+
+</section>
