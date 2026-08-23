@@ -15,7 +15,7 @@ export class ProjectsComponent {
 agregarProyecto() {
 throw new Error('Method not implemented.');
 }
-  projectsList: ProjectsContent[] = [];
+  projectsList: Project[] = [];
   isLoading: boolean = true;
   errorMessage: string = '';
 Descripcion: any;
@@ -49,13 +49,13 @@ registerForm: any;
 
   }
 
-  export interface Technology {
-  id: string;  // string, no number — en tu JSON es "1", "2", etc.
+export interface Technology {
+  id?: string;
   name: string;
 }
 
-export interface ProjectsContent {
-  id: string;  // string, no number
+export interface Project {
+  id?: string;
   name: string;
   description: string;
   technologies: Technology[];
