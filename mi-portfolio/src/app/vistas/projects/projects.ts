@@ -2,26 +2,44 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Projects } from '../../services/proyectos-service';
 import { FormBuilder, Validators } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './projects.html',
   styleUrls: ['./projects.css']
 })
 
-export class ProjectsComponent {
+export class ProjectsComponent{
+  projects: Project[] = [];
+  isLoading: boolean = true;
+  ngOnInit(): void {
+    this.loadProjects();
+  };
+  loadProjects(): void {
+    this.isLoading=true;
+    this.projectService.getProjects().subscribe({
+      next: (data) => {
+        this.projects = data;
+        this.isLoading = false;
+      },
+      error: (error) => {
+        console.error('Error al agregar proyectos', error);
+        this.isLoading = false;
+      }
+    });
+  }
 agregarProyecto() {
 throw new Error('Method not implemented.');
 }
   projectsList: Project[] = [];
-  isLoading: boolean = true;
   errorMessage: string = '';
-Descripcion: any;
-Link: any;
-Nombre: any;
-registerForm: any;
+  Descripcion: any;
+  Link: any;
+  Nombre: any;
+  registerForm: any;
 
   constructor(private projectService: Projects) 
   { 
@@ -88,4 +106,7 @@ get Tecnologias() {
 get Link() {
   return this.registerForm.get('link');
 }
+
+
 }
+
