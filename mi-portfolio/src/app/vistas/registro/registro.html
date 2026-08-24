@@ -2,7 +2,7 @@
       <div class="form-group">
         <label for="name">Nombre:</label>
         <input type="text" formControlName="nombre" id="name" name="name" required>
-        @if (Nombre?.invalid && (Nombre?.touched || Nombre?.dirty)) 
+        @if (Nombre?.invalid && (Nombre.touched || Nombre.dirty)) 
         {
         <div class="text-danger">El nombre es requerido</div>
         }
@@ -11,13 +11,13 @@
       <div class="form-group">
         <label for="email">Email:</label>
         <input type="email" formControlName="email" id="email" name="email" required>
-        @if (Email?.invalid && (Email?.touched || Email?.dirty)) 
+        @if (Email?.invalid && (Email.touched || Email.dirty)) 
         {
-          @if (Email?.hasError('required')) 
+          @if (Email.hasError('required')) 
           {
             <div class="text-danger">El email es requerido</div>
           }
-          @if (Email?.hasError('email'))
+          @if (Email.hasError('email'))
           { 
             <div class="text-danger">El formato del email debe ser correcto</div>
           }
@@ -32,13 +32,13 @@
       <div class="form-group">
         <label for="message">Confirmar Contraseña:</label>
         <input type="password" formControlName="contrasenia2" id="contrasenia2" name="contrasenia2" required>
-        @if (Contrasenia2?.invalid && (Contrasenia2?.touched || Contrasenia2?.dirty)) 
+        @if (Contrasenia2?.invalid && (Contrasenia2.touched || Contrasenia2.dirty)) 
         {
-          @if (Contrasenia2?.hasError('required')) 
+          @if (Contrasenia2.hasError('required')) 
           {
             <div class="text-danger">La confirmación de la contraseña es requerida</div>
           }
-          @if (Contrasenia2?.dirty && Contrasenia2.touched){
+          @if (Contrasenia2.dirty && Contrasenia2.touched){
             @if (Contrasenia2 != Contrasenia1) {
               <div class="text-danger">Las contraseñas no coinciden</div>
             }
