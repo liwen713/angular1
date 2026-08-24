@@ -1,65 +1,128 @@
-.projects {
-  padding: 4rem 8%;
-  background-color: #333030;
-  color: #fff;
-}
-
-.projects h2 {
-  text-align: center;
-  margin-bottom: 3rem;
-  font-size: 2.5rem;
-  color: #ec92d9;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-}
-
-.project-card {
-  background-color: #080808;
+/* Contenedor principal */
+.project-form-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
   border-radius: 12px;
-  padding: 1.5rem;
-  transition: transform .3s;
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
+/* Título */
+.project-form-container h1 {
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
 }
 
-.project-card h3 {
-  color: #ec4899;
-  margin-bottom: 1rem;
-}
-
-.project-card p {
-  line-height: 1.6;
-}
-
-.tech-tags {
+/* Formulario */
+.project-form-container form {
   display: flex;
-  flex-wrap: wrap;
-  gap: .5rem;
-  margin: 1rem 0;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.tag {
-  background: #ec4899;
+/* Grupo de cada campo */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Inputs y textarea */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Foco */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+/* Textarea */
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Placeholder */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #999;
+}
+
+/* Mensajes de error */
+.error-message {
+  margin-top: 6px;
+}
+
+.error-message p {
+  margin: 3px 0;
+  color: #dc3545;
+  font-size: 0.9rem;
+}
+
+/* Campos inválidos */
+.form-group input.ng-invalid.ng-touched,
+.form-group textarea.ng-invalid.ng-touched {
+  border-color: #dc3545;
+}
+
+/* Botón */
+.project-form-container button {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 6px;
+  background-color: #f79fe5;
   color: white;
-  padding: .3rem .8rem;
-  border-radius: 20px;
-  font-size: .85rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
 }
 
-.github-link {
-  display: inline-block;
-  margin-top: 1rem;
-  color: #ec4899;
-  text-decoration: none;
-  font-weight: bold;
+/* Hover */
+.project-form-container button:hover:not(:disabled) {
+  background-color: #f79fe5;
 }
 
-.github-link:hover {
-  text-decoration: underline;
+/* Click */
+.project-form-container button:active:not(:disabled) {
+  transform: scale(0.99);
+}
+
+/* Botón deshabilitado */
+.project-form-container button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-form-container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .project-form-container h1 {
+    font-size: 1.6rem;
+  }
 }

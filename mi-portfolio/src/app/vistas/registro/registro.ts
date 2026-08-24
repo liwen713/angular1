@@ -19,19 +19,19 @@ registerForm= this.formBuilder.group({
 })
 
 get Nombre() {
-  return this.registerForm.get('nombre');
+  return this.registerForm.get('nombre')!;
 }
 
 get Email() {
-  return this.registerForm.get('email');
+  return this.registerForm.get('email')!;
 }
 
 get Contrasenia1() {
-  return this.registerForm.get('contrasenia1');
+  return this.registerForm.get('contrasenia1')!;
 }
 
 get Contrasenia2() {
-  return this.registerForm.get('contrasenia2');
+  return this.registerForm.get('contrasenia2')!;
 }
 
 registrarUsuario()
